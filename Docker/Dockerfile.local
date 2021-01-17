@@ -1,0 +1,12 @@
+FROM zelejs/app-openjre11:alpine-slim
+COPY ./target/env-test-saas-1.0.0-standalone.jar /webapps
+
+# FROM allin-web:alpine-m2 as M2
+
+# FROM allin-web:maven-jdk11 as builder
+# COPY --from=M2 /root/.m2 /root/.2
+
+
+
+
+

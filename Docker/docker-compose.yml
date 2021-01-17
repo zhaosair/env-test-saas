@@ -1,0 +1,13 @@
+version: "3"
+services:
+  api:
+    image: env-test-saas
+    container_name: api
+    # DOCKER_BUILDKIT=1 COMPOSE_DOCKER_CLI_BUILD=1 docker-compose build
+    build:
+      context: ../
+      dockerfile: ./Docker/Dockerfile
+    volumes: 
+      - ./test/config/application.yml:/webapps/config/application.yml
+    ports: 
+      - 8080:8080
