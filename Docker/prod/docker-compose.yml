@@ -7,6 +7,7 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ./api:/webapps
+      # - ./config/application.yml:/webapps/config/application.yml
     depends_on: # 这个参数说明 mysql57 容器将比 am-api 先启动
       - mysql57
 
@@ -42,7 +43,7 @@ services:
     environment:
       TZ: "Asia/Shanghai"
       MYSQL_DATABASE: test
-      MYSQL_ROOT_PASSWORD: 12345678
+      MYSQL_ROOT_PASSWORD: root
       #MYSQL_USER: smallsaas
       #MYSQL_PASSWORD: smallsaas
     volumes:
