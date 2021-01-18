@@ -5,6 +5,9 @@ services:
     container_name: api
     volumes: 
       - ./target/env-test-saas-1.0.0-standalone.jar:/webapps/app.jar  # 运行本地 artifact
-      - ./Docker/test/config/application.yml:/webapps/config/application.yml # 数据库配置
+      - ./Docker/test/config/application-test.yml:/webapps/config/application-test.yml # 数据库配置
     ports: 
       - 8080:8080  # curl http://localhost:8080/swagger-ui.html
+    command: 
+      - /usr/local/bin/run.sh
+      - test  # opt [produce, greenfield, test]
