@@ -8,6 +8,6 @@ services:
       - ./Docker/test/config/application-test.yml:/webapps/config/application-test.yml # 数据库配置
     ports: 
       - 8080:8080  # curl http://localhost:8080/swagger-ui.html
-    command: 
-      - /usr/local/bin/run.sh
-      - test  # opt [produce, greenfield, test]
+    # command: 
+    #   - /usr/local/bin/run.sh
+    #   - test  # opt [produce, greenfield, test] ## default test
