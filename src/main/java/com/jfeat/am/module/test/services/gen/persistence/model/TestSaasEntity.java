@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+import io.swagger.annotations.ApiModelProperty;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
@@ -52,7 +53,8 @@ public class TestSaasEntity extends Model<TestSaasEntity> {
     /**
      * 创建时间
      */
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
+	@ApiModelProperty(required = true, example = "2021-01-01 00:00")
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm")
 	@TableField("create_time")
 	private Date createTime;
 
