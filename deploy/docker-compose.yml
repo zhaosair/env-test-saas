@@ -2,7 +2,7 @@ version: "3"
 # docker-compose -f docker-compose.yml up --detach --build  ## for recreating th
 services:
   api:
-    image: env-test-saas:latest
+    image: env-test-saas:prod  #tag/prod 生产环境
     build:
       context: ../.
       # dockerfile: ./deploy/Dockerfile  # or Dockerfile.local
