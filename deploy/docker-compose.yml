@@ -2,14 +2,19 @@ version: "3"
 # docker-compose -f docker-compose.yml up --detach --build  ## for recreating th
 services:
   api:
-    image: zelejs/app-openjre11
+    image: env-test-saas:latest
+    build:
+      context: ../.
+      # dockerfile: ./deploy/Dockerfile  # or Dockerfile.local
+      dockerfile: ./deploy/Dockerfile.local
     container_name: api
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ./api:/webapps
-      # - ./config/application.yml:/webapps/config/application.yml
-    depends_on: # 这个参数说明 mysql57 容器将比 am-api 先启动
-      - mysql57
+      - ./deploy/config/application.yml:/webapps/config/application.yml
+      # - ./target/env-test-saas-1.0.0-standalone.jar:/webapps/app.jar
+      # - ./api:/webapps
+    depends_on: # 这个参数说明 mysqlserver 容器将比 am-api 先启动
+      - mysqlserver
 
 #  myapp-web:
 #    image: daocloud.io/library/nginx:latest
@@ -35,10 +40,10 @@ services:
 #    ports:
 #      - '8000:80'
 
-  mysql57:
+  mysqlserver:
     #image: daocloud.io/library/mysql:5.7
     image: zelejs/mysql:5.7
-    container_name: mysql57
+    container_name: mysqlserver
     restart: always
     environment:
       TZ: "Asia/Shanghai"
@@ -49,8 +54,8 @@ services:
     volumes:
       - /var/local/mysql/data:/var/lib/mysql
       - /var/local/mysql/logs:/var/log/mysql
-      #ports:
-      #  - '172.17.0.1:3306:3306'
+    ports:
+      - '3306:3306'
 
 #  redis:
 #    container_name: redis3

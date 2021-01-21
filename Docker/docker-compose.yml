@@ -2,13 +2,19 @@ version: "3"
 # DOCKER_BUILDKIT=1 COMPOSE_DOCKER_CLI_BUILD=1 docker-compose build
 services:
   api:
+    image: env-test-saas
     build:
       context: ../
       dockerfile: ./Docker/Dockerfile
-    image: env-test-saas
     container_name: api
     ports: 
       - 8080:8080
-    # command: 
-    #   - /usr/local/bin/run.sh
-    #   - test  # opt [produce, greenfield, test] ## default test
+
+  # 本地构建 standalone.jar 后可执行 
+  # docker-compose build local
+  # 仅用于构建， 本地构建后，再容器构建例子
+  local:
+    image: env-test-saas
+    build:
+      context: ../
+      dockerfile: ./Docker/Dockerfile.local

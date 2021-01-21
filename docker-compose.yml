@@ -1,7 +1,8 @@
+## 无需构建，直接运行
 version: "3"
 services:
   api:
-    image: env-test-saas
+    image: zelejs/allin-web:jdk11
     container_name: api
     volumes: 
       - ./target/env-test-saas-1.0.0-standalone.jar:/webapps/app.jar  # 运行本地 artifact

@@ -24,6 +24,7 @@ COPY ./src ./src
 RUN --mount=type=cache,id=m2_cache,target=/root/.m2,rw mvn package -Dmaven.test.skip=true
 
 #final-stage
-FROM zelejs/allin-web:jdk11
+FROM zelejs/app-openjre11:alpine-slim
 COPY --from=build /usr/src/app/target/env-test-saas-1.0.0-standalone.jar /webapps/app.jar
-ADD ./Docker/test/config/application-test.yml /webapps/config/application-test.yml
+## 需要动态配置
+# ADD ./deploy/config/application.yml /webapps/config/application.yml

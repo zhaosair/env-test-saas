@@ -1,0 +1,3 @@
+FROM zelejs/app-openjre11:alpine-slim
+
+COPY ./target/env-test-saas-1.0.0-standalone.jar /webapps
