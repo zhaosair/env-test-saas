@@ -1,3 +1,12 @@
+## 一键部署
+```
+echo '151.101.64.133 raw.githubusercontent.com' >> /etc/hosts
+```
+```
+curl -sL https://raw.githubusercontent.com/zhaosair/env-test-saas/master/cli/docker-prod-run.sh | bash -
+```
+
+
 ## 本地构建
 
 ### 准备 maven ${HOME}/.m2/settings.xml

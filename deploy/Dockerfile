@@ -15,6 +15,9 @@ RUN --mount=type=cache,id=m2_cache,target=/root/.m2,rw cp -r /root/m2/* /root/.m
 ## mvn package
 WORKDIR /usr/src/app
 
+
+### Start build
+###
 COPY ./pom.xml  ./pom.xml
 RUN --mount=type=cache,id=m2_cache,target=/root/.m2,rw mvn dependency:go-offline -Dmaven.main.skip=true -Dmaven.test.skip=true
 # #RUN --mount=type=bind,source=./.m2,target=/root/.m2,rw mvn -o install
@@ -22,9 +25,12 @@ RUN --mount=type=cache,id=m2_cache,target=/root/.m2,rw mvn dependency:go-offline
 # # To package the application
 COPY ./src ./src
 RUN --mount=type=cache,id=m2_cache,target=/root/.m2,rw mvn package -Dmaven.test.skip=true
+###
+### End built
+
+
 
 #final-stage
 FROM zelejs/app-openjre11:alpine-slim
 COPY --from=build /usr/src/app/target/env-test-saas-1.0.0-standalone.jar /webapps/app.jar
-## 需要动态配置
-# ADD ./deploy/config/application.yml /webapps/config/application.yml
+ADD ./deploy/config/application.yml /webapps/config/application.yml
