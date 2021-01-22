@@ -1,12 +1,13 @@
 version: "3"
 # docker-compose -f docker-compose.yml up --detach --build  ## for recreating th
+# COMPOSE_DOCKER_CLI_BUILD=1 docker-compose build
 services:
   api:
     image: env-test-saas:prod  #tag/prod 生产环境
     build:
       context: ../.
       # dockerfile: ./deploy/Dockerfile  # or Dockerfile.local
-      dockerfile: ./deploy/Dockerfile.local
+      dockerfile: ./deploy/Dockerfile
     container_name: api
     volumes:
       - /etc/localtime:/etc/localtime:ro
