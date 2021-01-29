@@ -1,0 +1,8 @@
+version: "3"
+     # COMPOSE_DOCKER_CLI_BUILD=1 docker-compose build local
+services:
+  api:
+    image: env-test-saas
+     build:
+       context: ../../../
+       dockerfile: ./Docker/tag/local/Dockerfile

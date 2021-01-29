@@ -14,4 +14,3 @@ spring:
 logging:
   level: debug
   config: config/logback-spring.xml
-

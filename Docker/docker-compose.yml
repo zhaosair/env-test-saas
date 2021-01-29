@@ -1,20 +1,22 @@
 version: "3"
+# docker-compose -f docker-compose.yml up --detach --build  ## for recreating th
+# COMPOSE_DOCKER_CLI_BUILD=1 docker-compose build
 services:
   api:
-    image: env-test-saas
-    # COMPOSE_DOCKER_CLI_BUILD=1 docker-compose build
+    image: env-test-saas:latest 
+    container_name: api
     build:
-      context: ../.
-      dockerfile: ./Docker/Dockerfile
-    ports: 
-      - 8080:8080
+      context: .
+      dockerfile: ./Dockerfile
+    depends_on:  # 这个参数说明 mysqlserver 容器将比 api 先启动
+      - mysqlserver
 
-  # 本地构建 standalone.jar 后可执行 
-  # docker-compose build local
-  # 仅用于构建， 本地构建后，再容器构建例子
-  # local:
-  #   image: env-test-saas
-  #   # COMPOSE_DOCKER_CLI_BUILD=1 docker-compose build local
-  #   build:
-  #     context: ../
-  #     dockerfile: ./Docker/Dockerfile.local
+  mysqlserver:
+    image: zelejs/mysql:5.7
+    container_name: mysqlserver
+    environment:
+      MYSQL_DATABASE: test
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - '3306:3306'
+  
