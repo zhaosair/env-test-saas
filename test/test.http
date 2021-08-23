@@ -1,20 +1,27 @@
-@endpoint = http://localhost:5600
-GET {{endpoint}}/api/crud/fieldModel/fieldModels
+#   endpoint 改为自己的api地址
+#   endpoint 后缀改为自己api更改的后缀
+#   下面带的数据改为自己数据库的数据
+### GET 获取
+@endpoint = http://localhost:8080
+GET {{endpoint}}/api/crud/testsaas/entities
 
-
-
-POST {{endpoint}}/api/crud/fieldModel/fieldModels
+### POST 提交
+POST {{endpoint}}/api/crud/testsaas/entities
 Content-Type: application/json
 
 {
-    "comments": "aa9",
-    "defaultValue": "aa4",
-    "fieldFloatLength": "aa8",
-    "fieldLength": "aa7",
-    "fieldType": "long",
-    "isNotNull": false,
-    "isUnique": false,
-    "masterId": "aa3",
-    "templateId": "aa2",
-    "templateName": "aa1"
+  "name": "ckw",
+  "orgId": 0,
+  "status": "mvn"
+
 }
+### PUT 更新
+PUT {{endpoint}}/api/crud/fieldModel/fieldModels/1
+Content-Type: application/json
+
+{
+   
+}
+
+### DELETE 删除
+DELETE {{endpoint}}/api/crud/testsaas/entities/3
