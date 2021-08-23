@@ -1,0 +1,20 @@
+@endpoint = http://localhost:5600
+GET {{endpoint}}/api/crud/fieldModel/fieldModels
+
+
+
+POST {{endpoint}}/api/crud/fieldModel/fieldModels
+Content-Type: application/json
+
+{
+    "comments": "aa9",
+    "defaultValue": "aa4",
+    "fieldFloatLength": "aa8",
+    "fieldLength": "aa7",
+    "fieldType": "long",
+    "isNotNull": false,
+    "isUnique": false,
+    "masterId": "aa3",
+    "templateId": "aa2",
+    "templateName": "aa1"
+}
