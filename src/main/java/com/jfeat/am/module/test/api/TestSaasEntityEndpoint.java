@@ -1,8 +1,8 @@
 package com.jfeat.am.module.test.api;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.jfeat.am.common.annotation.BusinessLog;
 import com.jfeat.am.common.annotation.Permission;
+import com.jfeat.am.module.log.annotation.BusinessLog;
 import com.jfeat.am.module.test.services.domain.dao.QueryTestSaasEntityDao;
 import com.jfeat.am.module.test.services.domain.model.TestSaasEntityRecord;
 import com.jfeat.am.module.test.services.domain.service.TestSaasEntityService;
