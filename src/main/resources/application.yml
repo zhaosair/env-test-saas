@@ -125,23 +125,23 @@ am:
 ##########################################################
 ###################  正式环境的profile  ###################
 ##########################################################
-spring:
-  profiles: produce
-  datasource:
-      url: jdbc:mysql://192.168.2.153/test?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
-      username: root
-      password: root
-      filters: log4j,mergeStat
-  rabbitmq:
-      host: 112.74.26.228
-      port: 5672
-      username: jfeat
-      password: jfeat
-
-logging:
-  level: warn
-  file: logs/trace.log
-
-am:
-  shiro-cache-redis: true
-  reset-admin-perms: false
+#spring:
+#  profiles: produce
+#  datasource:
+#      url: jdbc:mysql://192.168.2.153/test?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
+#      username: root
+#      password: root
+#      filters: log4j,mergeStat
+#  rabbitmq:
+#      host: 112.74.26.228
+#      port: 5672
+#      username: jfeat
+#      password: jfeat
+#
+#logging:
+#  level: warn
+#  file: logs/trace.log
+#
+#am:
+#  shiro-cache-redis: true
+#  reset-admin-perms: false
