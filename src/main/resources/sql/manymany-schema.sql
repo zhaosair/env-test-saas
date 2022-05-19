@@ -1,14 +1,5 @@
 SET FOREIGN_KEY_CHECKS=0;
 
-DROP TABLE IF EXISTS `t_student`;
-CREATE TABLE t_student (
-`id` INT AUTO_INCREMENT,
-`name` VARCHAR(30),
-`classroom_id` INT,
-`address` VARCHAR(100),
-PRIMARY KEY(id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 DROP TABLE IF EXISTS `t_stu_cour`;
 
 CREATE TABLE `t_stu_cour`(

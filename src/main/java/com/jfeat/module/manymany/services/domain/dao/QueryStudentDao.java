@@ -33,4 +33,6 @@ public interface QueryStudentDao extends QueryMasterDao<Student> {
      * Query entity model list for slave items
      */
     List<StudentModel> queryMasterModelList(@Param("masterId") Object masterId);
+
+
 }
