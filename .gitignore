@@ -1,7 +1,7 @@
 target/
 build/
 /gen/
-src/.idea/
+.idea/
 .gradle/
 .svn/*
 *.iml
