@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jfeat.module.manymany.services.domain.dao.QueryStudentDao">
+    <sql id="Base_Column_List">
+            t_student.id, t_student.name, t_student.classroom_id AS classroomId, t_student.address
+    </sql>
+
+
+    <select id="queryMasterModel" resultType="StudentModel">
+        SELECT t_student.*
+        FROM t_student
+        WHERE t_student.id = #{id}
+        GROUP BY t_student.id
+    </select>
+
+
+    <select id="findStudentPage" resultType="StudentRecord" parameterType="StudentRecord">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM t_student
+        WHERE 1=1
+        <if test="record.id != null and record.id>0 ">
+            AND t_student.id LIKE CONCAT('%',#{record.id},'%')
+        </if>
+        <if test="record.name != null and record.name!= ''">
+            AND t_student.name LIKE CONCAT('%',#{record.name},'%')
+        </if>
+
+
+        <if test="record.classroomId != null and record.classroomId>0 ">
+            AND t_student.classroom_id LIKE CONCAT('%',#{record.classroomId},'%')
+        </if>
+        <if test="record.address != null and record.address!= ''">
+            AND t_student.address LIKE CONCAT('%',#{record.address},'%')
+        </if>
+
+        <if test="startTime != null">
+            <![CDATA[AND t_student.start_time >= DATE(#{startTime})]]>
+        </if>
+        <if test="endTime != null">
+            <![CDATA[AND t_student.end_time <= DATE(#{endTime}]]>
+        </if>
+        <!--
+    <if test="search != null and search != ''">
+        OR t_student.name LIKE CONCAT('%',#{search},'%')
+    </if>
+    -->
+    </select>
+</mapper>
