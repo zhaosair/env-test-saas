@@ -47,7 +47,6 @@ public class IgnoreAuthorizationTest extends BaseJunit {
     public void testGet()  throws Exception {
         RequestBuilder request = get("/api/crud/testsaas/entities");
         MvcResult result = mockMvc.perform(request).andExpect(status().isOk()).andReturn();
-
         logger.debug(result.getResponse().getContentAsString());
     }
 }

@@ -32,7 +32,7 @@ jwt:
 
 ###################  项目启动配置  ###################
 server:
-  port: 8080
+  port: 8082
 ###################  spring配置  ###################
 flyway:
   baseline-on-migrate: true
@@ -79,13 +79,26 @@ mybatis-plus:
 spring:
   profiles: test
   datasource:
-      url: jdbc:h2:mem:jobs;DB_CLOSE_DELAY=-1;DATABASE_TO_UPPER=false
-      driver-class-name: org.h2.Driver
-      username: sa
-      password:
+      url: jdbc:mysql://127.0.0.1:3306/test?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+      username: root
+      password: root
+
+      #      url: jdbc:mysql://120.24.235.88/test?characterEncoding=utf8&autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=GMT%2B8
+      #      username: zb
+      #      password: zb2014 192.168.3.239:3306
+      driver-class-name: com.mysql.cj.jdbc.Driver
       filters: log4j,mergeStat
-      schema: classpath*:sql/*-schema.sql
-      data: classpath*:sql/*-data.sql
+      sql-script-encoding: UTF-8
+      schema: classpath*:sql/**/*-schema.sql
+      data: classpath*:sql/**/*-data.sql
+      initialize: false
+#      url: jdbc:h2:mem:jobs;DB_CLOSE_DELAY=-1;DATABASE_TO_UPPER=false
+#      driver-class-name: org.h2.Driver
+#      username: sa
+#      password:
+#      filters: log4j,mergeStat
+#      schema: classpath*:sql/*-schema.sql
+#      data: classpath*:sql/*-data.sql
 
 logging:
   level: debug
@@ -101,12 +114,13 @@ am:
 spring:
   profiles: dev
   datasource:
-      url: jdbc:mysql://192.168.3.239:3306/test?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+      url: jdbc:mysql://127.0.0.1:3306/test?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
       username: root
       password: root
+
 #      url: jdbc:mysql://120.24.235.88/test?characterEncoding=utf8&autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=GMT%2B8
 #      username: zb
-#      password: zb2014
+#      password: zb2014 192.168.3.239:3306
       driver-class-name: com.mysql.cj.jdbc.Driver
       filters: log4j,mergeStat
       sql-script-encoding: UTF-8
