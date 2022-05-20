@@ -4,12 +4,12 @@ package com.jfeat.module.onemany.services.gen.crud.service.impl;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.jfeat.crud.plus.FIELD;
-import com.jfeat.module.manymany.services.gen.persistence.dao.StudentMapper;
-import com.jfeat.module.manymany.services.gen.persistence.model.Student;
+import com.jfeat.module.onemany.services.gen.persistence.dao.StudentMapper;
 import com.jfeat.module.onemany.services.gen.persistence.model.Classroom;
 import com.jfeat.module.onemany.services.gen.persistence.dao.ClassroomMapper;
 
 import com.jfeat.module.onemany.services.gen.crud.service.CRUDClassroomOverModelService;
+import com.jfeat.module.onemany.services.gen.persistence.model.Student;
 import org.springframework.stereotype.Service;
 import com.jfeat.crud.base.exception.BusinessCode;
 import com.jfeat.crud.base.exception.BusinessException;

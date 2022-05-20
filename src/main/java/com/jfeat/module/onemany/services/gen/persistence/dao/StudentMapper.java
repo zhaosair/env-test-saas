@@ -1,7 +1,7 @@
-package com.jfeat.module.manymany.services.gen.persistence.dao;
+package com.jfeat.module.onemany.services.gen.persistence.dao;
 
-import com.jfeat.module.manymany.services.gen.persistence.model.Student;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.jfeat.module.onemany.services.gen.persistence.model.Student;
 
 /**
  * <p>
