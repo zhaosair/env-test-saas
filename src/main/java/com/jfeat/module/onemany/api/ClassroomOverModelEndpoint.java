@@ -31,8 +31,6 @@ import com.jfeat.crud.plus.DefaultFilterResult;
 import com.jfeat.module.onemany.api.permission.*;
 import com.jfeat.am.common.annotation.Permission;
 
-import java.math.BigDecimal;
-
 import com.jfeat.module.onemany.services.domain.service.*;
 import com.jfeat.module.onemany.services.domain.model.ClassroomRecord;
 import com.jfeat.module.onemany.services.gen.crud.model.ClassroomModel;
@@ -122,7 +120,7 @@ public class ClassroomOverModelEndpoint {
     @PutMapping("/{id}")
     @ApiOperation(value = "修改 Classroom", response = ClassroomModel.class)
     public Tip updateClassroom(@PathVariable Long id, @RequestBody ClassroomModel entity) {
-        entity.setId(Math.toIntExact(id));
+        entity.setId(id);
         // use update flags
         int newOptions = META.UPDATE_CASCADING_DELETION_FLAG;  //default to delete not exist items
         // newOptions = FlagUtil.setFlag(newOptions, META.UPDATE_ALL_COLUMNS_FLAG);

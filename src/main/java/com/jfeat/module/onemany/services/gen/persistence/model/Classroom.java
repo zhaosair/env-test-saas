@@ -14,7 +14,7 @@ import io.swagger.annotations.ApiModelProperty;
  * </p>
  *
  * @author Code generator
- * @since 2022-05-19
+ * @since 2022-05-22
  */
 @TableName("t_classroom")
 @ApiModel(value="Classroom对象", description="")
@@ -23,16 +23,16 @@ public class Classroom extends Model<Classroom> {
     private static final long serialVersionUID=1L;
 
       @TableId(value = "id", type = IdType.AUTO)
-      private Integer id;
+      private Long id;
 
     private String name;
 
     
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-      public Classroom setId(Integer id) {
+      public Classroom setId(Long id) {
           this.id = id;
           return this;
       }
