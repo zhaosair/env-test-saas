@@ -1,7 +1,6 @@
 package com.jfeat.am.module.test.api;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.jfeat.am.common.annotation.BusinessLog;
 import com.jfeat.am.common.annotation.Permission;
 import com.jfeat.am.module.test.services.domain.dao.QueryTestSaasEntityDao;
 import com.jfeat.am.module.test.services.domain.model.TestSaasEntityRecord;
@@ -53,7 +52,6 @@ public class TestSaasEntityEndpoint {
     @Resource
     QueryTestSaasEntityDao queryTestSaasEntityDao;
 
-    @BusinessLog(name = "测试", value = "新建 TestSaasEntity")
     @ApiOperation(value = "新建 TestSaasEntity", response = TestSaasEntity.class)
     @Permission(TestSaasPermission.PERM_ADD)
     @PostMapping
@@ -70,7 +68,6 @@ public class TestSaasEntityEndpoint {
         return SuccessTip.create(affected);
     }
 
-    @BusinessLog(name = "测试", value = "查看 TestSaasEntity")
     @GetMapping("/{id}")
     @ApiOperation(value = "查看 TestSaasEntity", response = TestSaasEntity.class)
     @Permission(TestSaasPermission.PERM_VIEW)
@@ -78,7 +75,6 @@ public class TestSaasEntityEndpoint {
         return SuccessTip.create(testSaasEntityService.retrieveMaster(id));
     }
 
-    @BusinessLog(name = "测试", value = "修改 TestSaasEntity")
     @PutMapping("/{id}")
     @ApiOperation(value = "修改 TestSaasEntity", response = TestSaasEntity.class)
     @Permission(TestSaasPermission.PERM_EDIT)
@@ -87,7 +83,6 @@ public class TestSaasEntityEndpoint {
         return SuccessTip.create(testSaasEntityService.updateMaster(entity));
     }
 
-    @BusinessLog(name = "测试", value = "删除 TestSaasEntity")
     @DeleteMapping("/{id}")
     @ApiOperation("删除 TestSaasEntity")
     @Permission(TestSaasPermission.PERM_DELETE)
@@ -95,7 +90,6 @@ public class TestSaasEntityEndpoint {
         return SuccessTip.create(testSaasEntityService.deleteMaster(id));
     }
 
-    @BusinessLog(name = "测试", value = "TestSaasEntity 列表信息")
     @ApiOperation(value = "TestSaasEntity 列表信息", response = TestSaasEntityRecord.class)
     @GetMapping
     @Permission(TestSaasPermission.PERM_VIEW)

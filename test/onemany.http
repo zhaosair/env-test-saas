@@ -1,0 +1,40 @@
+@endpoint=http://localhost:8080
+
+
+###一对多不含中间表
+
+### 增添教室
+POST {{endpoint}}/api/crud/onemany/classroom/classrooms
+Content-Type: application/json
+{
+    "id":1,
+    "name":"三年级四班"
+}
+
+
+### 以班级id查询学生
+### 2是id
+GET {{endpoint}}/api/crud/onemany/classroom/classrooms/2
+
+
+###分页查询
+GET {{endpoint}}/api/crud/onemany/classroom/classrooms?pageNum=1&pageSize=2
+
+
+
+###以id修改班级名称
+### 2是id
+PUT {{endpoint}}/api/crud/onemany/classroom/classrooms/2
+Content-Type: application/json
+{
+    "id":2,
+    "name":"幼儿园"
+}
+
+
+
+
+###以id删除班级
+### 2是id
+DELETE {{endpoint}}/api/crud/onemany/classroom/classrooms/2
+
