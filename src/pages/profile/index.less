@@ -1,0 +1,39 @@
+.UserPage_Pages{
+    display: flex;
+}
+.UserPage_LeftNav{
+    background-color: #f5f5f5;
+    flex: 1;
+    max-width: 200px;
+    height: 100%;
+    margin-right: 20px;
+}
+
+.UserPage_Content{
+    flex: 1;
+    // background-color: white;
+    border-radius: 5px;
+}
+.UserPage_LeftNav_Children{
+    max-height: 80px;
+    width: 100%;
+    background-color: #fff;
+    color:#666;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bolder;
+    float: left;
+    margin-bottom:5px;
+    cursor: pointer;
+    &:hover{
+        background-color: #f5f5f5;
+        border-right: 5px solid;
+    }
+    &.Click{
+        background-color: #eee;
+        border-right: 5px solid;
+        // box-shadow: 2px 2px 2px #999;
+        
+    }
+}

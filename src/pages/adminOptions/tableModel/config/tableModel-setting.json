@@ -1,0 +1,132 @@
+{
+    "pageName": {
+      "table": "业务单表模板",
+      "new": "新增业务单表模板",
+      "edit": "更改业务单表模板"
+    },
+    "listAPI": "/api/crud/tableModel/tableModels",
+    "createAPI": "/api/crud/tableModel/tableModels",
+    "getAPI": "/api/crud/tableModel/tableModels/[id]",
+    "updateAPI": "/api/crud/tableModel/tableModels/[id]",
+    "deleteAPI": "/api/crud/tableModel/tableModels/(id)",
+    "columns": 1,
+    "createFields": [
+        {
+            "label":"模板名称",
+            "rules":[
+                {
+                    "type":"required"
+                }
+            ],
+            "props":{
+                "placeholder":"请输入模板名称"
+            },
+            "type":"input",
+            "field":"templateName"
+        },
+        {
+            "label":"模板标题",
+            "props":{
+                "placeholder":"请输入模板标题"
+            },
+            "type":"input",
+            "field":"templateTitle"
+        },
+        {
+            "label":"模板说明",
+            "props":{
+                "placeholder":"请输入模板说明"
+            },
+            "autoSize":{
+                "minRows":4
+            },
+            "type":"text-area",
+            "field":"templateDesc"
+        }
+    ],
+    "updateFields": [
+        {
+            "label":"模板名称",
+            "rules":[
+                {
+                    "type":"required"
+                }
+            ],
+            "props":{
+                "placeholder":"请输入模板名称"
+            },
+            "type":"input",
+            "field":"templateName"
+        },
+        {
+            "label":"模板标题",
+            "props":{
+                "placeholder":"请输入模板标题"
+            },
+            "type":"input",
+            "field":"templateTitle"
+        },
+        {
+            "label":"模板说明",
+            "props":{
+                "placeholder":"请输入模板说明"
+            },
+            "autoSize":{
+                "minRows":4
+            },
+            "type":"text-area",
+            "field":"templateDesc"
+        }
+    ],
+    "map": {},
+    "layout": {
+      "table": "Content",
+      "form": "TitleContent"
+    },
+    "tableActions": [
+        {
+            "title":"添加","type":"path",
+            "options":{
+                "style":"primary",
+                "path":"/adminOptions/tableModel/tableModel-add"
+            }
+        }
+    ],
+    "tableOperation": [
+        {
+            "title":"编辑","type":"path",
+            "options":{
+                "outside":true,
+                "path":"/adminOptions/tableModel/tableModel-edit"
+            }
+        },
+        {
+            "title":"删除","type":"delete"
+        }
+    ],
+    "tableFields":[
+        {"field":"templateName","label":"模板名称"},
+        {"field":"templateTitle","label":"模板标题"},
+        {"field":"templateDesc","label":"模板说明"}
+    ],
+    "searchFields": [
+        {
+            "label": "模板名称",
+            "field": "templateName",
+            "type": "search",
+            "props": {
+              "placeholder": "模板名称搜索"
+            }
+        }
+    ],
+    "viewConfig": [{
+      "title": "详情",
+      "type": "plain",
+      "fields": [
+        {"field":"templateName","label":"模板名称"},
+        {"field":"templateTitle","label":"模板标题"},
+        {"field":"templateDesc","label":"模板说明"}
+      ]
+    }]
+  }
+  

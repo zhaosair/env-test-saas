@@ -1,0 +1,289 @@
+{
+  "pageName": {
+    "table": "报表信息",
+    "new": "新建报表",
+    "edit": "报表编辑"
+  },
+  "listAPI": "/api/adm/stat/meta",
+  "createAPI": "/api/adm/stat/meta",
+  "getAPI": "/api/adm/stat/meta/getOne/[id]",
+  "updateAPI": "/api/adm/stat/meta/[id]",
+  "deleteAPI": "/api/adm/stat/meta/(id)",
+  "columns": 1,
+  "createFields": [
+    {
+      "field":"groupMenuId",
+      "label":"菜单选择",
+      "type":"select-fetch",
+      "props":{
+        "style":{
+          "width":"240px"
+        }
+      },
+      "options":{
+        "API":"/api/crud/menu/custom/group",
+        "label":"menuName",
+        "value":"id"
+      }
+    },
+    {
+      "label": "报表名称",
+      "rules": [
+        {
+          "type": "required"
+        }
+      ],
+      "props": {
+        "placeholder": "请输入文件名称"
+      },
+      "type": "input",
+      "field": "field"
+    },
+    {
+      "label": "报表标题",
+      "props": {
+        "placeholder": "请输入报表标题"
+      },
+      "type": "input",
+      "field": "title"
+    },
+    {
+      "label": "搜索字段",
+      "props": {
+        "placeholder": "请输入搜索字段"
+      },
+      "type": "input",
+      "field": "search",
+      "toptips":"填写数据库表的子类，如名称，年龄，性别等，可通过这些字段查询数据库中对应的类"
+    },
+    {
+      "label": "字段类型",
+      "rules": [
+        {
+          "type": "required"
+        }
+      ],
+      "toptips":"格式：S,D,等等，格式用逗号隔开，可选值：金钱D,百分比P,时间T,数量C,字符串S",
+      "props": {
+        "placeholder": "请输入字段类型"
+      },
+      "type": "input",
+      "field": "type"
+    },
+    {
+      "label": "权限",
+      "props": {
+        "placeholder": "请输入权限"
+      },
+      "type": "input",
+      "field": "permission"
+    },
+    {
+      "label": "查询语句",
+      "props": {
+        "placeholder": "请输入查询语句",
+        "autoSize": {
+          "minRows": 10
+        }
+      },
+      "type": "text-area",
+      "field": "querySql"
+    },
+    {
+      "label": "字段备注",
+      "props": {
+        "placeholder": "请输入备注,例子: 1. 内容",
+        "autoSize": {
+          "minRows": 10
+        },
+        "showCount":"true",
+        "maxLength":"200"
+      },
+      "type": "text-area",
+      "field": "tips"
+    }
+  ],
+  "updateFields": [
+    {
+      "label": "报表名称",
+      "rules": [
+        {
+          "type": "required"
+        }
+      ],
+      "props": {
+        "placeholder": "请输入文件名称"
+      },
+      "type": "input",
+      "field": "field"
+    },
+    {
+      "label": "报表标题",
+      "props": {
+        "placeholder": "请输入报表标题"
+      },
+      "type": "input",
+      "field": "title"
+    },
+    {
+      "label": "搜索字段",
+      "props": {
+        "placeholder": "请输入搜索字段"
+      },
+      "type": "input",
+      "field": "search"
+    },
+    {
+      "label": "类型说明",
+      "defaultValue": "类型输入格式：S,D,...。请在（金钱D,百分比P,时间T,数量C,字符串S）里选择值或对应的字母填写",
+      "type": "plain"
+    },
+    {
+      "label": "字段类型",
+      "rules": [
+        {
+          "type": "required"
+        }
+      ],
+      "props": {
+        "placeholder": "请输入字段类型"
+      },
+      "type": "input",
+      "field": "type"
+    },
+    {
+      "label": "权限",
+      "props": {
+        "placeholder": "请输入权限"
+      },
+      "type": "input",
+      "field": "permission"
+    },
+    {
+      "label": "查询语句",
+      "props": {
+        "placeholder": "请输入查询语句",
+        "autoSize": {
+          "minRows": 10
+        }
+      },
+      "type": "text-area",
+      "field": "querySql"
+    },
+    {
+      "label": "备注说明",
+      "defaultValue": "类型输入格式： {第几个字段} : {描述内容}",
+      "type": "plain"
+    },
+    {
+      "label": "字段备注",
+      "props": {
+        "placeholder": "请输入备注",
+        "autoSize": {
+          "minRows": 10
+        }
+      },
+      "type": "text-area",
+      "field": "tips"
+    }
+  ],
+  "map": {},
+  "layout": {
+    "table": "Content",
+    "form": "TitleContent"
+  },
+  "tableActions": [
+    {
+      "title": "添加",
+      "type": "path",
+      "options": {
+        "outside": true,
+        "style": "primary",
+        "path": "tables/tableField-add"
+      },
+      "expect": {
+        "permission": ""
+      }
+    }
+  ],
+  "tableOperation": [
+    {
+      "title": "详情",
+      "type": "path",
+      "options": {
+        "outside": true,
+        "path": "tables/tableField-view"
+      }
+    },
+    {
+      "title": "编辑",
+      "type": "path",
+      "options": {
+        "outside": true,
+        "path": "tables/tableField-edit"
+      }
+    },
+    {
+      "title": "删除",
+      "type": "delete",
+      "options": {
+        "outside": false
+      },
+      "expect": {
+        "permission": ""
+      }
+    }
+  ],
+  "searchFields": [
+    {
+      "label": "报表名称",
+      "field": "field",
+      "type": "input",
+      "props": {
+        "placeholder": "请输入文件名"
+      }
+    }
+  ],
+  "tableFields": [
+    {
+      "label": "报表名称",
+      "field": "field"
+    }
+  ],
+  "viewConfig": [
+    {
+      "title": "详情",
+      "type": "plain",
+      "fields": [
+        {
+          "label": "报表名称",
+          "field": "field"
+        },
+        {
+          "label": "报表标题",
+          "field": "title"
+        },
+        {
+          "label": "报表权限",
+          "field": "permission"
+        },
+        {
+          "label": "字段类型",
+          "field": "type"
+        },
+        {
+          "label": "搜索字段",
+          "field": "search"
+        },
+        {
+          "label": "字段备注",
+          "field": "tips"
+        },
+        {
+          "label": "查询语句",
+          "field": "querySql"
+        }
+      ]
+    }
+  ]
+}

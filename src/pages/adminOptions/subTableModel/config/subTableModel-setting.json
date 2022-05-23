@@ -1,0 +1,108 @@
+{
+    "pageName": {
+      "table": "子表模板",
+      "new": "新增子表模板",
+      "edit": "更改子表模板"
+    },
+    "listAPI": "/api/crud/subTableModel/subTableModels",
+    "createAPI": "/api/crud/subTableModel/subTableModels",
+    "getAPI": "/api/crud/subTableModel/subTableModels/[id]",
+    "updateAPI": "/api/crud/subTableModel/subTableModels/[id]",
+    "deleteAPI": "/api/crud/subTableModel/subTableModels/(id)",
+    "columns": 1,
+    "createFields": [
+        {
+            "label":"模板名称",
+            "rules":[
+                {
+                    "type":"required"
+                }
+            ],
+            "props":{
+                "placeholder":"请输入模板名称"
+            },
+            "type":"input",
+            "field":"templateName"
+        },
+        {
+            "label":"模板标签",
+            "props":{
+                "placeholder":"请输入模板标签"
+            },
+            "type":"input",
+            "field":"templateLabel"
+        }
+    ],
+    "updateFields": [
+        {
+            "label":"模板名称",
+            "rules":[
+                {
+                    "type":"required"
+                }
+            ],
+            "props":{
+                "placeholder":"请输入模板名称"
+            },
+            "type":"input",
+            "field":"templateName"
+        },
+        {
+            "label":"模板标签",
+            "props":{
+                "placeholder":"请输入模板标签"
+            },
+            "type":"input",
+            "field":"templateLabel"
+        }
+    ],
+    "map": {},
+    "layout": {
+      "table": "Content",
+      "form": "TitleContent"
+    },
+    "tableActions": [
+        {
+            "title":"添加","type":"path",
+            "options":{
+                "style":"primary",
+                "path":"/adminOptions/subTableModel/subTableModel-add"
+            }
+        }
+    ],
+    "tableOperation": [
+        {
+            "title":"编辑","type":"path",
+            "options":{
+                "outside":true,
+                "path":"/adminOptions/subTableModel/subTableModel-edit"
+            }
+        },
+        {
+            "title":"删除","type":"delete"
+        }
+    ],
+    "tableFields":[
+        {"field":"templateName","label":"模板名称"},
+        {"field":"templateLabel","label":"模板标签"}
+    ],
+    "searchFields": [
+        {
+            "label": "模板名称",
+            "field": "templateName",
+            "type": "search",
+            "props": {
+              "placeholder": "模板名称搜索"
+            }
+        }
+    ],
+    "viewConfig": [{
+      "title": "详情",
+      "type": "plain",
+      "fields": [
+        {"field":"templateName","label":"模板名称"},
+        {"field":"templateLabel","label":"模板标签"}
+      ]
+    }]
+  }
+  

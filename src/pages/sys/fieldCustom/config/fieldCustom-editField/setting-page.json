@@ -1,0 +1,525 @@
+{
+  "pageName": "",
+  "columns": 2,
+  "layout": {
+    "table": "Content",
+    "form": "TitleContent"
+  },
+  "map": {
+    "status": {
+      "map": {
+        "PASS": "使用中",
+        "PENDING_APPROVAL": "待审核",
+        "REFUSE": "已拒绝"
+      }
+    },
+    "comeFrom": {
+      "map": {
+        "0": "系统创建",
+        "1": "用户注册"
+      }
+    }
+  },
+  "tableActions": [
+    {
+      "title": "添加",
+      "type": "modal",
+      "options": {
+        "style": "primary",
+        "modalTitle": "添加步骤",
+        "modalWidth": 600,
+        "items": [
+          {
+            "component": "Form",
+            "config": {
+              "layout": "Grid",
+              "layoutConfig": {
+                "value": [
+                  24
+                ]
+              },
+              "API": {
+                "createAPI": "/api/eav/entities/[id]/attributes"
+              },
+              "fields": [
+                {
+                  "label": "字段绑定名",
+                  "rules": [
+                    {
+                      "type": "required"
+                    }
+                  ],
+                  "props": {
+                    "placeholder": "请输入"
+                  },
+                  "type": "input",
+                  "field": "attributeName"
+                },
+                {
+                  "label": "名称",
+                  "rules": [
+                    {
+                      "type": "required"
+                    }
+                  ],
+                  "props": {
+                    "placeholder": "请输入"
+                  },
+                  "type": "input",
+                  "field": "fieldName"
+                },
+                {
+                  "field": "fieldType",
+                  "label": "字段类型",
+                  "type": "select",
+                  "rules": [
+                    "required"
+                  ],
+                  "props": {
+                    "placeholder": "请选择",
+                    "style": {
+                      "width": 240
+                    }
+                  },
+                  "options": [
+                    {
+                      "label": "小整数值(1字节)",
+                      "value": "tinyint"
+                    },
+                    {
+                      "label": "小整数值(2字节)",
+                      "value": "smallint"
+                    },
+                    {
+                      "label": "中等整数值",
+                      "value": "mediumint"
+                    },
+                    {
+                      "label": "正常整数值",
+                      "value": "int"
+                    },
+                    {
+                      "label": "长整数值",
+                      "value": "long"
+                    },
+                    {
+                      "label": "大整数值",
+                      "value": "bigint"
+                    },
+                    {
+                      "label": "单精度浮点型",
+                      "value": "float"
+                    },
+                    {
+                      "label": "双精度浮点型",
+                      "value": "double"
+                    },
+                    {
+                      "label": "定点数",
+                      "value": "decimal"
+                    },
+                    {
+                      "label": "年",
+                      "value": "year"
+                    },
+                    {
+                      "label": "时间",
+                      "value": "time"
+                    },
+                    {
+                      "label": "日期",
+                      "value": "date"
+                    },
+                    {
+                      "label": "日期时间",
+                      "value": "datetime"
+                    },
+                    {
+                      "label": "自动存储记录修改时间",
+                      "value": "timestamp"
+                    },
+                    {
+                      "label": "字符串",
+                      "value": "char"
+                    },
+                    {
+                      "label": "长字符串",
+                      "value": "varchar"
+                    },
+                    {
+                      "label": "小文本",
+                      "value": "tinytext"
+                    },
+                    {
+                      "label": "文本",
+                      "value": "text"
+                    },
+                    {
+                      "label": "中等文本",
+                      "value": "mediumtext"
+                    },
+                    {
+                      "label": "长文本",
+                      "value": "longtext"
+                    },
+                    {
+                      "label": "枚举",
+                      "value": "enum"
+                    },
+                    {
+                      "label": "设置",
+                      "value": "set"
+                    },
+                    {
+                      "label": "字节",
+                      "value": "bit"
+                    },
+                    {
+                      "label": "二进制存储",
+                      "value": "binary"
+                    },
+                    {
+                      "label": "长二进制存储",
+                      "value": "varbinary"
+                    },
+                    {
+                      "label": "小blob",
+                      "value": "tinyblob"
+                    },
+                    {
+                      "label": "正常blob",
+                      "value": "blob"
+                    },
+                    {
+                      "label": "中blob",
+                      "value": "mediumblob"
+                    },
+                    {
+                      "label": "长blob",
+                      "value": "longblob"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "expect": {}
+    }
+  ],
+  "tableOperation": [
+    {
+      "title": "编辑",
+      "type": "modal",
+      "options": {
+        "modalTitle": "编辑步骤",
+        "modalWidth": 600,
+        "outside": true,
+        "items": [
+          {
+            "component": "Form",
+            "config": {
+              "layout": "Grid",
+              "layoutConfig": {
+                "value": [
+                  24
+                ]
+              },
+              "API": {
+                "getAPI": "/api/eav/entities/attributes/(id)",
+                "updateAPI": "/api/eav/attributes/(id)"
+              },
+              "fields": [
+                {
+                  "label": "字段绑定名",
+                  "rules": [
+                    {
+                      "type": "required"
+                    }
+                  ],
+                  "props": {
+                    "placeholder": "请输入",
+                    "style": {
+                      "width": 240
+                    }
+                  },
+                  "type": "input",
+                  "field": "attributeName"
+                },
+                {
+                  "label": "名称",
+                  "rules": [
+                    {
+                      "type": "required"
+                    }
+                  ],
+                  "props": {
+                    "placeholder": "请输入",
+                    "style": {
+                      "width": 240
+                    }
+                  },
+                  "type": "input",
+                  "field": "fieldName"
+                },
+                {
+                  "field": "fieldType",
+                  "label": "字段类型",
+                  "type": "select",
+                  "rules": [
+                    "required"
+                  ],
+                  "props": {
+                    "placeholder": "请选择",
+                    "style": {
+                      "width": 240
+                    }
+                  },
+                  "options": [
+                    {
+                      "label": "小整数值(1字节)",
+                      "value": "tinyint"
+                    },
+                    {
+                      "label": "小整数值(2字节)",
+                      "value": "smallint"
+                    },
+                    {
+                      "label": "中等整数值",
+                      "value": "mediumint"
+                    },
+                    {
+                      "label": "正常整数值",
+                      "value": "int"
+                    },
+                    {
+                      "label": "长整数值",
+                      "value": "long"
+                    },
+                    {
+                      "label": "大整数值",
+                      "value": "bigint"
+                    },
+                    {
+                      "label": "单精度浮点型",
+                      "value": "float"
+                    },
+                    {
+                      "label": "双精度浮点型",
+                      "value": "double"
+                    },
+                    {
+                      "label": "定点数",
+                      "value": "decimal"
+                    },
+                    {
+                      "label": "年",
+                      "value": "year"
+                    },
+                    {
+                      "label": "时间",
+                      "value": "time"
+                    },
+                    {
+                      "label": "日期",
+                      "value": "date"
+                    },
+                    {
+                      "label": "日期时间",
+                      "value": "datetime"
+                    },
+                    {
+                      "label": "自动存储记录修改时间",
+                      "value": "timestamp"
+                    },
+                    {
+                      "label": "字符串",
+                      "value": "char"
+                    },
+                    {
+                      "label": "长字符串",
+                      "value": "varchar"
+                    },
+                    {
+                      "label": "小文本",
+                      "value": "tinytext"
+                    },
+                    {
+                      "label": "文本",
+                      "value": "text"
+                    },
+                    {
+                      "label": "中等文本",
+                      "value": "mediumtext"
+                    },
+                    {
+                      "label": "长文本",
+                      "value": "longtext"
+                    },
+                    {
+                      "label": "枚举",
+                      "value": "enum"
+                    },
+                    {
+                      "label": "设置",
+                      "value": "set"
+                    },
+                    {
+                      "label": "字节",
+                      "value": "bit"
+                    },
+                    {
+                      "label": "二进制存储",
+                      "value": "binary"
+                    },
+                    {
+                      "label": "长二进制存储",
+                      "value": "varbinary"
+                    },
+                    {
+                      "label": "小blob",
+                      "value": "tinyblob"
+                    },
+                    {
+                      "label": "正常blob",
+                      "value": "blob"
+                    },
+                    {
+                      "label": "中blob",
+                      "value": "mediumblob"
+                    },
+                    {
+                      "label": "长blob",
+                      "value": "longblob"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "expect": {
+        "permission": ""
+      }
+    },
+    {
+      "title": "删除",
+      "type": "request",
+      "options": {
+        "outside": true,
+        "tips": "确定要删除吗?",
+        "API": "/api/eav/attributes/(id)",
+        "method": "delete"
+      }
+    }
+  ],
+  "createFields": [
+    {}
+  ],
+  "updateFields": [
+    {}
+  ],
+  "viewFields": [
+    {}
+  ],
+  "listAPI": "/api/eav/entities/[id]/attributes",
+  "createAPI": "/api/[id]",
+  "getAPI": "/api/(id)",
+  "updateAPI": "/api/(id)",
+  "deleteAPI": "/api/(id)",
+  "searchFields": [
+    {
+      "field": "search",
+      "label": "搜索",
+      "type": "input",
+      "props": {
+        "placeholder": "请输入..."
+      }
+    }
+  ],
+  "tableFields": [
+    {
+      "field": "attributeName",
+      "label": "字段绑定名",
+      "width": 300
+    },
+    {
+      "field": "fieldName",
+      "label": "名称",
+      "width": 300
+    },
+    {
+      "field": "fieldType",
+      "label": "字段类型",
+      "valueType": "tag",
+      "options": {
+        "map": {
+          "tinyint": "小整数值(1字节)",
+          "smallint": "小整数值(2字节)",
+          "mediumint": "中等整数值",
+          "int": "正常整数值",
+          "long": "长整数值",
+          "bigint": "大整数值",
+          "float": "单精度浮点型",
+          "double": "双精度浮点型",
+          "decimal": "定点数",
+          "year": "年",
+          "time": "时间",
+          "date": "日期",
+          "datetime": "日期时间",
+          "timestamp": "自动存储记录修改时间",
+          "char": "字符串",
+          "varchar": "长字符串",
+          "tinytext": "小文本",
+          "text": "文本",
+          "mediumtext": "中等文本",
+          "longtext": "长文本",
+          "enum": "枚举",
+          "set": "设置",
+          "bit": "字节",
+          "binary": "二进制存储",
+          "varbinary": "长二进制存储",
+          "tinyblob": "小blob",
+          "blob": "正常blob",
+          "mediumblob": "中blob",
+          "longblob": "长blob"
+        },
+        "chy": {
+          "tinyint": "blue",
+          "smallint": "blue ",
+          "mediumint": "blue",
+          "int": "blue",
+          "long": "blue",
+          "bigint": "blue",
+          "float": "cyan",
+          "double": "cyan",
+          "decimal": "cyan",
+          "year": "purple",
+          "time": "purple",
+          "date": "purple",
+          "datetime": "purple",
+          "timestamp": "purple",
+          "char": "orange",
+          "varchar": "orange",
+          "tinytext": "orange",
+          "text": "orange",
+          "mediumtext": "orange",
+          "longtext": "orange",
+          "enum": "gray",
+          "set": "gray",
+          "bit": "gray",
+          "binary": "gray",
+          "varbinary": "gray",
+          "tinyblob": "purple_dark",
+          "blob": "purple_dark",
+          "mediumblob": "purple_dark",
+          "longblob": "purple_dark"
+        }
+      },
+      "theme": "option",
+      "type": "Dot"
+    }
+  ]
+}
