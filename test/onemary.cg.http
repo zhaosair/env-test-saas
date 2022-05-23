@@ -1,0 +1,19 @@
+@endpoint=http://localhost:8080
+
+### 一对多
+POST {{endpoint}}/api/cg/generate/code HTTP/1.1
+content-type: application/json
+{
+  "project":"cg",
+  "module":"cg",
+  "submodule": "onemary",
+  "tableName":"t_classroom",
+  "sql":"..\\src\\main\resources\\onemany-schema.sql",
+  "slaves":
+  [
+    {
+      "tableName": "t_student",
+      "masterId": "classroom_id"
+    }
+  ]
+}

@@ -4,7 +4,7 @@
 
 
 ### 增添班级
-POST {{endpoint}}/api/crud/onemany/classroom/classrooms
+POST {{endpoint}}/api/crud/onemary/classroom/classrooms
 Content-Type: application/json
 
 {
@@ -13,15 +13,15 @@ Content-Type: application/json
 
 
 ### 查询班级详情
-GET {{endpoint}}/api/crud/onemany/classroom/classrooms/2
+GET {{endpoint}}/api/crud/onemary/classroom/classrooms/2
 
 
 ###分页查询班级
-GET {{endpoint}}/api/crud/onemany/classroom/classrooms?pageNum=1&pageSize=10
+GET {{endpoint}}/api/crud/onemary/classroom/classrooms?pageNum=1&pageSize=10
 
 
 ### 更新班级
-PUT {{endpoint}}/api/crud/onemany/classroom/classrooms/2
+PUT {{endpoint}}/api/crud/onemary/classroom/classrooms/2
 Content-Type: application/json
 
 {
@@ -30,7 +30,7 @@ Content-Type: application/json
 
 
 ### 增加班级学生,同时更新学生信息
-PUT {{endpoint}}/api/crud/onemany/classroom/classrooms/2
+PUT {{endpoint}}/api/crud/onemary/classroom/classrooms/2
 Content-Type: application/json
 
 {
@@ -48,5 +48,5 @@ Content-Type: application/json
 
 
 ### 删除班级
-DELETE {{endpoint}}/api/crud/onemany/classroom/classrooms/2
+DELETE {{endpoint}}/api/crud/onemary/classroom/classrooms/2
 
