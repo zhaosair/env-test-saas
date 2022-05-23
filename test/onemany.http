@@ -60,8 +60,7 @@ POST {{endpoint}}/api/crud/onemary/student/students
 Content-Type: application/json
 
 {
-    "name":"张小明",
-    "classroom_id":1
+    "name":"张小明"
 }
 
 
@@ -78,8 +77,7 @@ PUT {{endpoint}}/api/crud/onemary/student/students/7
 Content-Type: application/json
 
 {
-    "name":"李园",
-    "classroom_id":2
+    "name":"李园"
 }
 
 
