@@ -5,10 +5,9 @@ POST {{endpoint}}/api/cg/generate/code HTTP/1.1
 content-type: application/json
 {
   "project":"cg",
-  "module":"cg",
-  "submodule": "onemary",
+  "module":"onemary",
   "tableName":"t_classroom",
-  "sql":"..\\src\\main\resources\\onemany-schema.sql",
+  "sql":"onemany-schema.sql",
   "slaves":
   [
     {
@@ -16,4 +15,16 @@ content-type: application/json
       "masterId": "classroom_id"
     }
   ]
+}
+
+
+####
+POST {{endpoint}}/api/cg/generate/code HTTP/1.1
+content-type: application/json
+{
+  "project":"cg",
+  "module":"onemary",
+  "tableName":"t_student",
+  "sql":"onemany-schema.sql",
+
 }

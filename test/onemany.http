@@ -50,3 +50,41 @@ Content-Type: application/json
 ### 删除班级
 DELETE {{endpoint}}/api/crud/onemary/classroom/classrooms/2
 
+
+
+###学生测试用例
+
+
+### 增添学生
+POST {{endpoint}}/api/crud/onemary/student/students
+Content-Type: application/json
+
+{
+    "name":"张小明",
+    "classroom_id":1
+}
+
+
+### 查询学生详情
+GET {{endpoint}}/api/crud/onemary/student/students/1
+
+
+###分页查询学生信息
+GET {{endpoint}}/api/crud/onemary/student/students?pageNum=1&pageSize=10
+
+
+### 更新学生信息
+PUT {{endpoint}}/api/crud/onemary/student/students/7
+Content-Type: application/json
+
+{
+    "name":"李园",
+    "classroom_id":2
+}
+
+
+### 删除学生
+DELETE {{endpoint}}/api/crud/onemary/student/students/7
+
+
+
