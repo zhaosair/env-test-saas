@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jfeat.module.cg.onemany.services.domain.dao.QueryClassroomDao">
+    <sql id="Base_Column_List">
+        t_classroom.id, t_classroom.name
+    </sql>
+
+
+    <select id="queryMasterModel" resultType="ClassroomModel">
+        SELECT t_classroom.*
+        FROM t_classroom
+        WHERE t_classroom.id = #{id}
+        GROUP BY t_classroom.id
+    </select>
+
+
+    <select id="findClassroomPage" resultType="ClassroomRecord" parameterType="ClassroomRecord">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM t_classroom
+        WHERE 1=1
+        <if test="record.id != null and record.id>0 ">
+            AND t_classroom.id LIKE CONCAT('%',#{record.id},'%')
+        </if>
+        <if test="record.name != null and record.name!= ''">
+            AND t_classroom.name LIKE CONCAT('%',#{record.name},'%')
+        </if>
+
+        <if test="startTime != null">
+            <![CDATA[AND t_classroom.start_time >= DATE(#{startTime})]]>
+        </if>
+        <if test="endTime != null">
+            <![CDATA[AND t_classroom.end_time <= DATE(#{endTime}]]>
+        </if>
+        <!--
+    <if test="search != null and search != ''">
+        OR t_classroom.name LIKE CONCAT('%',#{search},'%')
+    </if>
+    -->
+    </select>
+</mapper>

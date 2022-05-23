@@ -1,0 +1,52 @@
+@endpoint=http://localhost:8080
+
+## 测试一对多用例
+
+
+### 增添班级
+POST {{endpoint}}/api/crud/onemany/classroom/classrooms
+Content-Type: application/json
+
+{
+    "name":"三年级四班"
+}
+
+
+### 查询班级详情
+GET {{endpoint}}/api/crud/onemany/classroom/classrooms/2
+
+
+###分页查询班级
+GET {{endpoint}}/api/crud/onemany/classroom/classrooms?pageNum=1&pageSize=10
+
+
+### 更新班级
+PUT {{endpoint}}/api/crud/onemany/classroom/classrooms/2
+Content-Type: application/json
+
+{
+    "name":"幼儿园"
+}
+
+
+### 增加班级学生,同时更新学生信息
+PUT {{endpoint}}/api/crud/onemany/classroom/classrooms/2
+Content-Type: application/json
+
+{
+    "name":"幼儿园2",
+    "items":[
+        {
+           "name":"张天宇"
+        },
+        {
+           "id": 1,
+           "name":"李心蕊"
+        }
+    ]
+}
+
+
+### 删除班级
+DELETE {{endpoint}}/api/crud/onemany/classroom/classrooms/2
+
