@@ -134,9 +134,5 @@ module.exports = [
     name: '字段模板管理',
     path: '/fieldTemplate'
   },
-  {
-    name: '动态页面管理',
-    path: '/dynamicPage'
-  },
   
 ]
