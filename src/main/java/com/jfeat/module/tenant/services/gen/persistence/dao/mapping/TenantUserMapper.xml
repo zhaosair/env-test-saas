@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jfeat.module.tenant.services.gen.persistence.dao.TenantUserMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.jfeat.module.tenant.services.gen.persistence.model.TenantUser">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="check_in" property="checkIn" />
+        <result column="occupancy_days" property="occupancyDays" />
+        <result column="room_number" property="roomNumber" />
+        <result column="org_id" property="orgId" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, name, check_in, occupancy_days, room_number, org_id
+    </sql>
+
+</mapper>

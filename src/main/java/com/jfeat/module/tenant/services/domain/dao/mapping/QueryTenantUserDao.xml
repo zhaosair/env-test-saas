@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jfeat.module.tenant.services.domain.dao.QueryTenantUserDao">
+    <sql id="Base_Column_List">
+        t_tenant_user.id
+        , t_tenant_user.name, t_tenant_user.check_in AS checkIn, t_tenant_user.occupancy_days AS occupancyDays, t_tenant_user.room_number AS roomNumber, t_tenant_user.org_id AS orgId
+    </sql>
+
+    <sql id="QueryOwnedOrgIds">
+        SELECT children.id
+        FROM t_sys_org,
+             t_sys_org as children
+        WHERE t_sys_org.left_num &lt;= children.left_num
+          AND t_sys_org.right_num >= children.left_num
+          and t_sys_org.id = #{record.orgId}
+        order by t_sys_org.node_level ASC
+    </sql>
+
+
+    <select id="queryMasterModel" resultType="TenantUserModel">
+        SELECT t_tenant_user.*
+        FROM t_tenant_user
+        WHERE t_tenant_user.id = #{id}
+        GROUP BY t_tenant_user.id
+    </select>
+
+
+    <select id="findTenantUserPage" resultType="TenantUserRecord" parameterType="TenantUserRecord">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM t_tenant_user
+        <if test="record.orgId > 0">
+            ,(<include refid="QueryOwnedOrgIds"></include>) AS ownedOrgIds
+        </if>
+        WHERE 1=1
+        <if test="record.orgId > 0">
+            AND t_tenant_user.org_id = ownedOrgIds.id
+        </if>
+        <if test="record.id != null and record.id>0 ">
+            AND t_tenant_user.id LIKE CONCAT('%',#{record.id},'%')
+        </if>
+        <if test="record.name != null and record.name!= ''">
+            AND t_tenant_user.name LIKE CONCAT('%',#{record.name},'%')
+        </if>
+
+
+        <if test="record.checkIn != null and record.checkIn>0 ">
+            AND t_tenant_user.check_in LIKE CONCAT('%',#{record.checkIn},'%')
+        </if>
+
+
+        <if test="record.occupancyDays != null and record.occupancyDays>0 ">
+            AND t_tenant_user.occupancy_days LIKE CONCAT('%',#{record.occupancyDays},'%')
+        </if>
+
+
+        <if test="record.roomNumber != null and record.roomNumber!= ''">
+            AND t_tenant_user.room_number LIKE CONCAT('%',#{record.roomNumber},'%')
+        </if>
+
+
+        <if test="record.orgId != null and record.orgId>0 ">
+            AND t_tenant_user.org_id IN (<include refid="QueryOwnedOrgIds"/>)
+        </if>
+
+        <if test="startTime != null">
+            <![CDATA[AND t_tenant_user.start_time >= DATE(#{startTime})]]>
+        </if>
+        <if test="endTime != null">
+            <![CDATA[AND t_tenant_user.end_time <= DATE(#{endTime}]]>
+        </if>
+        <!--
+    <if test="search != null and search != ''">
+        OR t_tenant_user.name LIKE CONCAT('%',#{search},'%')
+    </if>
+    -->
+    </select>
+</mapper>
