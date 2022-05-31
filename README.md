@@ -122,11 +122,9 @@ LASet({
 ```
 
 
-#### github 
- > git@github.com:kequandian/zero-element-admin.git
- > main 分支
 
-
-#### githee
- > git@gitee.com:smallsaas/zero-element-admin.git
+### 页面下载按钮文件摆放位置
+ > 1. 下载并解压文件, 将整个文件夹 复制到 src/pages 目录下
+ > 2. 在 src/config/router.config.js 配置相应的菜单
+ > 3. npm start 启动项目
  
