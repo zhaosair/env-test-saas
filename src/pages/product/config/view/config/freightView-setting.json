@@ -1,0 +1,150 @@
+{
+    "pageName":{
+        "view":"运费模板详情"
+    },
+    "getAPI":"/api/crud/product/fareTemplates/[id]",
+    "columns":2,
+    "type":"default",
+    "fields":[
+        {
+            "value": "基本信息",
+            "type":"group",
+            "field":"group_1",
+            "span":24
+        },
+        {
+            "type":"plain",
+        "label": "模板名称",
+        "field": "name"
+        },
+        {
+            "type":"plain",
+        "label": "标题",
+        "field": "title"
+        },
+        {
+            "type":"plain",
+        "label": "内容",
+        "field": "content"
+        },
+        {
+            "type":"plain",
+        "label": "销售类别",
+        "field": "messageFormat"
+        },
+        {
+            "type":"plain",
+        "label": "发货时间",
+        "field": "dispatchTime"
+        },
+        {
+            "type":"plain",
+        "label": "地址",
+        "field": "shopAddr"
+        },
+        {
+            "type":"plain",
+        "field": "lastModifiedDate",
+        "label": "最后编辑时间"
+        },
+        {
+            "type":"plain",
+            "label": "是否包邮",
+            "field": "isInclPostage",
+            "options":{
+                "map": {
+                    "1": "卖家承担运费",
+                    "0": "自定义运费"
+                }
+            }
+        },
+        {
+            "type":"plain",
+        "label": "计价方式",
+        "field": "valuationModel",
+        "options":{
+            "map": {
+                "0": "按件数",
+                "1": "按重量",
+                "2": "按体积"
+                }
+        }
+        },
+        {
+            "type":"plain",
+        "label": "是否指定条件包邮",
+        "field": "isInclPostageByIf",
+        "options":{
+            "map": {
+                "1": "是",
+                "0": "否"
+                }
+        }
+        },
+        {
+            "value": "运送方式",
+            "type":"group",
+            "field":"group_2",
+            "span":24
+        },
+        {
+            "type":"one-mary",
+            "field": "items",
+            "span":24,
+            "options":{
+                "fields": [ {
+                    "label": "类型",
+                    "field": "carryWay",
+                    "valueType": "tag",
+                    "options": {
+                    "map": {
+                    "0": "快递",
+                    "1": "EMS",
+                    "2": "平邮"
+                    },
+                    "chy":{
+                        "0":"P1",
+                        "1":"P2",
+                        "2":"P3"
+                      }
+                    },
+                    "theme":"priority",
+                    "type":"default"
+                    },
+                    {
+                    "label": "地区",
+                    "field": "region"
+                    },
+                    {
+                    "label": "首件数量",
+                    "field": "firstPiece"
+                    },
+                    {
+                    "label": "首费",
+                    "field": "firstAmount",
+                    "rules": ["required"]
+                    },
+                    {
+                    "label": "续件",
+                    "field": "secondPiece"
+                    },
+                    {
+                    "label": "续费",
+                    "field": "secondAmount",
+                    "rules": ["required"]
+                    }
+                    ]
+            }
+        }
+    ],
+    "map":{},
+    "layout":{
+        "table": "Content",
+        "form": "TitleContent"
+    },
+    "tableActions": [
+    ],
+    "tableOperation": [],
+    "searchFields": [],
+    "tableFields": []
+}

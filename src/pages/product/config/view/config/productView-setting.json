@@ -1,0 +1,156 @@
+{
+    "pageName": {
+        "view":"产品详情"
+    },
+    "getAPI": "/api/crud/product/products/[id]",
+    "listAPI": "/api/crud/product/products/[id]",
+    "columns": 2,
+    "type": "default",
+    "createFields": [
+        { "field":"group_1","type":"group","value": "基本属性", "alone": true,"span":24 },
+        { "type":"plain","label": "产品名称", "field": "name" },
+        { "type":"plain","label": "缩略名称", "field": "shortName"},
+        { "type":"plain","label": "品牌", "field": "brandName" },
+        { "type":"plain","label": "条形码", "field": "barcode" },
+        { "type":"plain","label": "类别", "field": "categoryName" },
+        { "type":"plain","label": "排序号", "field": "sortOrder" },
+
+        {
+            "label": "分区", "field": "partnerLevelZone",
+            "type":"plain",
+            "options":{
+                "map": {
+                    "1": "零元区",
+                    "2": "精品区",
+                    "3": "特价区"
+                }
+            }
+        },
+        {
+            "label": "推荐", "field": "promoted",
+            "type":"plain",
+            "options":{
+                "map": {
+                    "1": "是",
+                    "0": "否"
+                }
+            }
+        },
+        {
+            "label": "状态", "field": "status",
+            "type":"plain",
+            "options":{
+                "map": {
+                    "DRAFT": "草稿",
+                    "PENDING_APPROVAL": "待审核",
+                    "APPROVED": "已审核",
+                    "ONSELL": "上架",
+                    "OFFSELL": "下架"
+                }
+            }
+        },
+
+        { 
+            "field":"group_2",
+            "type":"group",
+            "value": "规格", "alone": true,
+            "span":24
+         },
+        { 
+            "type":"plain",
+            "label": "产品单位", "field": "unit" },
+        { 
+            "type":"plain",
+            "label": "重量(克)", "field": "weight" },
+        { 
+            "type":"plain",
+            "label": "体积(立方厘米)", "field": "bulk" },
+
+        {
+            "field":"group_3",
+            "type":"group",
+             "value": "价格与活动", "alone": "true","span":24 },
+        {
+            "type":"plain",
+             "label": "价格", "field": "price" },
+        {
+            "type":"plain",
+             "label": "建议售价", "field": "suggestedPrice" },
+        {
+            "type":"plain",
+             "label": "成本价", "field": "costPrice" },
+        {
+            "type":"plain",
+             "label": "分销价", "field": "distributionPrice" },
+        {
+        "type":"plain",
+            "label": "库存", "field": "stockBalance" },
+        {
+            "type":"plain",
+             "label": "优惠活动-积分", "field": "credit" },
+        {
+            "type":"plain",
+            "label": "优惠活动-优惠券", "field": "allowCoupon",
+            "options":{
+                "map": {
+                    "1": "允许使用",
+                    "0": "不允许使用"
+                }
+            }
+        },
+        {
+            "field":"group_4",
+            "type":"group",
+             "value": "其它信息", "alone": true,"span":24 },
+        {
+            "label": "产品图片", "field": "productImageList",
+            "type":"image"
+        },
+        {
+            "label": "海报", "field": "bannerList",
+            "type":"image",
+            "align": "middle"
+        },
+        {
+            "type":"path",
+            "label": "运费模板",
+            "title":"查看运费模板",
+            "field":"fareId",
+            "options": {
+                "isValue":true,
+                "path": "/product/freightView"
+            }
+        },
+        {
+            "field":"group_5",
+            "type":"group",
+            "value": "分红设置",
+            "span":24
+        },
+        {
+          "label": "",
+          "field": "productSettlementProportionList",
+          "type": "one-mary",
+          "span":24,
+          "options": {
+              "fields": [
+                { "field": "level", "label": "级别" },
+                { "field": "name", "label": "级别名称" },
+                { "field": "value", "label": "每件分成", "align": "right" },
+                { "field": "rewardType", "label": "单位" }
+              ]
+          }
+      }
+    ],
+    "updateFields": [],
+    "map": {},
+    "layout": {
+        "table": "Content",
+        "form": "TitleContent"
+    },
+    "tableActions": [
+    ],
+    "tableOperation": [],
+    "searchFields": [],
+    "tableFields": []
+}

@@ -1,0 +1,91 @@
+{
+    "pageName":{
+        "view":"类别详情"
+    },
+    "getAPI":"/api/crud/product/productCategoryies/[id]",
+    "columns":1,
+    "type":"default",
+    "fields":[
+        {"field":"group_1","type":"group","value":"基本信息"},
+        { "type":"plain","label": "名称", "field": "name" },
+        { "type":"plain","label": "父类别", "field": "parentId" },
+        {
+            "label": "主页展示", "field": "isShowProducts","type":"plain",
+            "options":{
+                "map":{
+                    "1": "是",
+                    "0": "否"
+                }
+            }
+        },
+        { "type":"plain","label": "销售类别", "field": "wholesale" },
+        {
+            "type":"plain","label": "点击类别显示产品详情", "field": "visible",
+            "options":{
+                "map": {
+                    "1": "是",
+                    "0": "否"
+                }
+            }
+        },
+        { "type":"plain","label": "主页推荐产品数量", "field": "promotedProductCount" },
+        { "type":"plain","label": "排序号", "field": "sortOrder" },
+        {
+            "label": "封面","type":"image","field":"cover"
+        },
+        { "type":"plain","label": "描述", "field": "description" },
+        { "value": "属性","field":"group_2","type":"group"},
+        {
+            "type":"one-mary",
+            "label":"",
+            "field": "productCategoryPropertyList",
+            "options":{
+                "fields": [
+                    { "label": "时间", "field": "processDate" },
+                    { "label": "内容", "field": "content" },
+        
+                    { "label": "显示名称", "field": "displayName" },
+                    {
+                    "label": "值类型", "field": "valueType", "valueType": "tag",
+                    "options": {
+                        "map": {
+                        "STRING": "字符串",
+                        "INTEGER": "整形",
+                        "BOOLEAN": "布尔值",
+                        "DATE": "日期"
+                        }
+                    }
+                    },
+                    {
+                    "label": "输入类型", "field": "inputType", "valueType": "tag",
+                    "options": {
+                        "map": {
+                        "INPUT_TEXT": "文本输入框",
+                        "INPUT_NUMBER": "数字输入框",
+                        "INPUT_DATE": "日期输入框",
+                        "TEXTAREA": "多行文本框",
+                        "CHECKBOX": "多选框",
+                        "RADIO": "单选框",
+                        "SELECT": "下拉框"
+                        }
+                    }
+                    },
+                    { "label": "可选值", "field": "candidateValues" },
+                    { "label": "默认值", "field": "defaultValue" },
+                    { "label": "是否必填", "field": "isRequired" },
+                    { "label": "排序号", "field": "sortOrder"}
+            ]
+            }
+        }
+    ],
+    "map":{},
+    "layout":{
+        "table": "Content",
+        "form": "TitleContent"
+    },
+    "tableActions": [
+    ],
+    "tableOperation": [],
+    "searchFields": [],
+    "tableFields": []
+}
