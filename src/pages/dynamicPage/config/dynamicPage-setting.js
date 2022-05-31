@@ -469,26 +469,34 @@ export const setting = {
       }
     },
     {
-      "title": "生成导航",
-      "type": "request",
+      "title": "下载页面",
+      "type": "downloadPage",
       "options": {
         "outside": true,
-        "tips": "确定要生成该页面的导航吗?",
-        "API": "/api/crud/menu/menus",
-        "method": "post",
-        "data":{
-          // C 目录， M 菜单
-          "menuType":"C",
-          "pid": "62",
-          "endpoint":getPort()
-        },
-        "query":{
-          "id":"id",
-          "menuName":"pageTitle",
-          "component":"/sys/testPageFetch?id=[id]"
-        }
+        "API": "/api/crud/lowMainPage/lowMainPages/(id)",
       }
     },
+    // {
+    //   "title": "生成导航",
+    //   "type": "request",
+    //   "options": {
+    //     "outside": true,
+    //     "tips": "确定要生成该页面的导航吗?",
+    //     "API": "/api/crud/menu/menus",
+    //     "method": "post",
+    //     "data":{
+    //       // C 目录， M 菜单
+    //       "menuType":"C",
+    //       "pid": "62",
+    //       "endpoint":getPort()
+    //     },
+    //     "query":{
+    //       "id":"id",
+    //       "menuName":"pageTitle",
+    //       "component":"/sys/testPageFetch?id=[id]"
+    //     }
+    //   }
+    // },
     {
       "title": "删除",
       "type": "delete",

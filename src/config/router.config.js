@@ -130,46 +130,19 @@ module.exports = [
   //   ]
   // }, 
 
+  
   {
-    name: '产品管理',
-    path: '/product',
-    items: [
-      {
-        path: '/product/categroy',
-        name: '产品类别',
-      },
-      {
-        path: '/product/items',
-        name: '产品',
-      },
-      // {
-      //   path: '/product/tag',
-      //   name: '产品标签',
-      // },
-      // {
-      //   path: '/product/trial',
-      //   name: '试用装管理',
-      //   icon: 'tag',
-      // },
-      // {
-      //   path: '/product/evaluate',
-      //   name: '评价管理',
-      //   icon: 'tag',
-      // },
-      // {
-      //   path: '/product/freight',
-      //   name: '运费模板',
-      // },
-      // {
-      //   path: '/product/brand',
-      //   name: '品牌管理',
-      // }
-    ]
+    name: 'students',
+    path: '/students'
   },
-
   {
     name: '字段模板管理',
     path: '/fieldTemplate'
+  },
+
+  {
+    name: '动态页面配置',
+    path: '/dynamicPage'
   },
   
 ]
