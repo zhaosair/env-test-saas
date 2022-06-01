@@ -16,10 +16,7 @@ export default function onRequest(props) {
   const {
     API='',
     toConfigAPI='/toconfig',
-    method = 'get',
     message = '操作成功',
-    fileNameField,
-    data = {},
     query = {
       id: 'id'
     }
@@ -27,9 +24,8 @@ export default function onRequest(props) {
 
   // console.log(data)
   
-  console.log('下载页面')
-
   function getPageConfig() {
+    msg.info('正在处理数据')
     // const apiUrl = `https://api.mock.smallsaas.cn/data`;
     let endpoint = getEndpoint()
     const apiUrl = `${endpoint}${toConfigAPI}`; //转换地址
@@ -48,7 +44,7 @@ export default function onRequest(props) {
               // console.log(value,"VALUE")
               if (value.code === 200) {
                 const data = value.data;
-                console.log(' 页面配置信息 = ', data)
+                // console.log(' 页面配置信息 = ', data)
                 handleDownloadPage(data)
               } else {
                 message.error('获取页面配置信息失败')
@@ -72,14 +68,14 @@ export default function onRequest(props) {
     let options = {
       method: "post"
     }
-    console.log('apiUrl = ', apiUrl)
     return promiseAjax(endpoint+ apiUrl, data, options)
     .then(value => {
       // console.log(value,"VALUE")
       if (value.code === 200) {
+        msg.info('数据处理完成')
         const data = value.data;
         downloadFileAction(data)
-        console.log(' 下载 = ', data)
+        console.log(' 下载地址 = ', data)
       } else {
         message.error('下载失败')
       }
@@ -96,5 +92,5 @@ export default function onRequest(props) {
   }
 
 
-  return getPageConfig(); // .catch(_ => msg.error(JSON.stringify(_)));
+  return getPageConfig(); 
 }
