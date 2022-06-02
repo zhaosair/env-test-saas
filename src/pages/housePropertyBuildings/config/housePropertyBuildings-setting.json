@@ -1,0 +1,183 @@
+{
+  "updateAPI": "/api/crud/house/housePropertyBuilding/housePropertyBuildings/[id]",
+  "tableFields": [{
+    "field": "area",
+    "label": "area",
+    "align": "left"
+  }, {
+    "field": "code",
+    "label": "code",
+    "align": "left"
+  }, {
+    "field": "community",
+    "label": "community",
+    "align": "left"
+  }, {
+    "field": "communityCode",
+    "label": "communityCode",
+    "align": "left"
+  }, {
+    "field": "floors",
+    "label": "floors",
+    "align": "left"
+  }, {
+    "field": "orgId",
+    "label": "orgId",
+    "align": "left"
+  }, {
+    "field": "units",
+    "label": "units",
+    "align": "left"
+  }],
+  "listAPI": "/api/crud/house/housePropertyBuilding/housePropertyBuildings",
+  "searchType": "MoreSearch",
+  "columns": 1,
+  "updateFields": [{
+      "field": "area",
+      "label": "area",
+      "type": "input"
+    }, {
+      "field": "code",
+      "label": "code",
+      "type": "input"
+    }, {
+      "field": "community",
+      "label": "community",
+      "type": "input"
+    }, {
+      "field": "communityCode",
+      "label": "communityCode",
+      "type": "input"
+    }, {
+      "field": "floors",
+      "label": "floors",
+      "type": "input"
+    }, {
+      "field": "orgId",
+      "label": "orgId",
+      "type": "input"
+    }, {
+      "field": "units",
+      "label": "units",
+      "type": "input"
+    },
+    {
+      "label": "房产",
+      "field": "items",
+      "type": "modal-checkbox",
+      "options": {
+        "title": "选择房产",
+        "label": "menuName",
+        "value": "id",
+        "pagination": true,
+        "API": "/api/crud/house/housePropertyBuildingUnit/housePropertyBuildingUnits",
+        "fields": [{
+          "label": "房产编号",
+          "field": "number"
+
+        }]
+      },
+      "expect": {}
+    }
+
+
+  ],
+  "viewConfig": [{
+    "field": "area",
+    "label": "area",
+    "type": "plain"
+  }, {
+    "field": "code",
+    "label": "code",
+    "type": "plain"
+  }, {
+    "field": "community",
+    "label": "community",
+    "type": "plain"
+  }, {
+    "field": "communityCode",
+    "label": "communityCode",
+    "type": "plain"
+  }, {
+    "field": "floors",
+    "label": "floors",
+    "type": "plain"
+  }, {
+    "field": "orgId",
+    "label": "orgId",
+    "type": "plain"
+  }, {
+    "field": "units",
+    "label": "units",
+    "type": "plain"
+  }],
+  "getAPI": "/api/crud/house/housePropertyBuilding/housePropertyBuildings/[id]",
+  "pageName": {
+    "new": "新增",
+    "edit": "编辑",
+    "name": "楼栋管理",
+    "table": "标题"
+  },
+  "createFields": [{
+    "field": "area",
+    "label": "area",
+    "type": "input"
+  }, {
+    "field": "code",
+    "label": "code",
+    "type": "input"
+  }, {
+    "field": "community",
+    "label": "community",
+    "type": "input"
+  }, {
+    "field": "communityCode",
+    "label": "communityCode",
+    "type": "input"
+  }, {
+    "field": "floors",
+    "label": "floors",
+    "type": "input"
+  }, {
+    "field": "orgId",
+    "label": "orgId",
+    "type": "input"
+  }, {
+    "field": "units",
+    "label": "units",
+    "type": "input"
+  }],
+  "layout": {
+    "form": "TitleContent",
+    "table": "Content"
+  },
+  "deleteAPI": "/api/crud/house/housePropertyBuilding/housePropertyBuildings/(id)",
+  "tableOperation": [{
+    "options": {
+      "path": "/housePropertyBuildings/housePropertyBuildings-view",
+      "outside": true
+    },
+    "title": "查询",
+    "type": "path"
+  }, {
+    "options": {
+      "path": "/housePropertyBuildings/housePropertyBuildings-edit",
+      "outside": true
+    },
+    "title": "编辑",
+    "type": "path"
+  }, {
+    "title": "删除",
+    "type": "delete"
+  }],
+  "searchButtonType": "text",
+  "createAPI": "/api/crud/house/housePropertyBuilding/housePropertyBuildings",
+  "searchFields": [],
+  "tableActions": [{
+    "options": {
+      "path": "/housePropertyBuildings/housePropertyBuildings-add"
+    },
+    "title": "新增",
+    "type": "path"
+  }]
+}

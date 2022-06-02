@@ -119,22 +119,19 @@ module.exports = [
   //     //   "name": "微服务权限配置",
   //     //   "path": "/devops/appPermission"
   //     // },
-        // {
-        //   name: '配置管理',
-        //   path: '/devops/configManage'
-        // },
-        // {
-        //   name: '权限管理',
-        //   path: '/devops/permManage'
-        // }
+  // {
+  //   name: '配置管理',
+  //   path: '/devops/configManage'
+  // },
+  // {
+  //   name: '权限管理',
+  //   path: '/devops/permManage'
+  // }
   //   ]
   // }, 
 
-  
-  {
-    name: 'students',
-    path: '/students'
-  },
+
+
   {
     name: '字段模板管理',
     path: '/fieldTemplate'
@@ -144,5 +141,17 @@ module.exports = [
     name: '动态页面配置',
     path: '/dynamicPage'
   },
-  
+  {
+    name: '房产信息列表',
+    path: '/housePropertyUserUnits'
+  },
+  {
+    name: '户型管理',
+    path: '/housePropertyBuildingUnits'
+  }
+
+  , {
+    name: '楼栋管理',
+    path: '/housePropertyBuildings'
+  }
 ]
