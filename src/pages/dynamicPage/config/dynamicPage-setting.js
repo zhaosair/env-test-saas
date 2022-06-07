@@ -454,7 +454,7 @@ export const setting = {
       "title": "加载字段",
       "type": "request",
       "options": {
-        "outside": true,
+        "outside": false,
         "tips": "确定要加载该页面数据接口的字段吗?",
         "API": "/addLowFields",
         "method": "post",
@@ -472,8 +472,27 @@ export const setting = {
       "title": "下载页面",
       "type": "downloadPage",
       "options": {
-        "outside": true,
+        "outside": false,
         "API": "/api/crud/lowMainPage/lowMainPages/(id)",
+      }
+    },
+    {
+      "title": "展示配置", "type": "modal",
+      "options": {
+        "outside": false,
+        "modalTitle": "页面配置",
+        "modalWidth": 1000,
+        "layout":"Empty",
+        "items":[
+          {
+            "component": 'DynamicPageShowConfig',
+            "config": {
+              "API":{
+                "getAPI":"/api/crud/lowMainPage/lowMainPages/(id)",
+              }
+            }
+          }
+        ]
       }
     },
     // {
