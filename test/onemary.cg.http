@@ -18,27 +18,6 @@ content-type: application/json
   ]
 }
 
-### 一对多：班级、老师、学生
-POST {{endpoint}}/api/cg/generate/code HTTP/1.1
-content-type: application/json
-
-{
-  "module":"onemary_teacher",
-  "tableName":"t_classroom",
-  "sql":"onemany-teacher-schema.sql",
-  "slaves":
-  [
-    {
-      "tableName": "t_student",
-      "masterId": "classroom_id"
-    },
-    {
-      "tableName": "t_teacher",
-      "masterId": "classroom_id"
-    }
-  ]
-}
-
 
 ####
 POST {{endpoint}}/api/cg/generate/code HTTP/1.1

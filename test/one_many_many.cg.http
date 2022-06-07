@@ -1,0 +1,23 @@
+@endpoint=http://localhost:8080
+
+
+### 一对多多：公司有多个部门，多名员工
+POST {{endpoint}}/api/cg/generate/code HTTP/1.1
+content-type: application/json
+
+{
+  "module":"one_many_many",
+  "tableName":"t_company",
+  "sql":"one-many-many-schema.sql",
+  "slaves":
+  [
+    {
+      "tableName": "t_department",
+      "masterId": "company_id"
+    },
+    {
+      "tableName": "t_employee",
+      "masterId": "company_id"
+    }
+  ]
+}
