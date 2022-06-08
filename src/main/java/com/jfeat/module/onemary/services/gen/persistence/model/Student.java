@@ -1,5 +1,6 @@
 package com.jfeat.module.onemary.services.gen.persistence.model;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
@@ -31,7 +32,17 @@ public class Student extends Model<Student> {
 
     private String address;
 
-    
+    @TableField(exist = false)
+    private String className;
+
+    public String getClassName() {
+        return className;
+    }
+
+    public void setClassName(String className) {
+        this.className = className;
+    }
+
     public Integer getId() {
         return id;
     }
