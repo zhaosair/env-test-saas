@@ -1,8 +1,8 @@
 package com.jfeat.base;
 
-import com.jfeat.am.module.test.services.domain.service.TestSaasEntityService;
-import com.jfeat.am.module.test.services.gen.persistence.model.TestSaasEntity;
 import com.jfeat.crud.plus.CRUD;
+import com.jfeat.module.saas.services.domain.service.TestSaasEntityService;
+import com.jfeat.module.saas.services.gen.persistence.model.TestSaasEntity;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +21,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class IgnoreAuthorizationTest extends BaseJunit {
 
     @Autowired
-    TestSaasEntityService entityService;
+    TestSaasEntityService entityEntityService;
 
     @Before
     public void initData(){

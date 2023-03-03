@@ -48,7 +48,7 @@ import java.util.List;
  */
     @RestController
     @Api("TestSaasEntity")
-            @RequestMapping("/api/crud/t_test_saas_entity/testSaasEntity/testSaasEntityies")
+    @RequestMapping("/api/crud/t_test_saas_entity/testSaasEntity/testSaasEntityies")
     public class TestSaasEntityEndpoint {
 
     @Resource
