@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jfeat.module.onemanymany.employee.services.domain.dao.QueryEmployeeDao">
+                                                                                                                        <sql id="Base_Column_List">
+                                                                                                                                                                                                                                                                        t_employee.id, t_employee.name, t_employee.company_id AS companyId
+    </sql>
+
+    
+    
+    <select id="queryMasterModel" resultType="EmployeeModel">
+       SELECT t_employee.*
+       FROM t_employee
+       WHERE t_employee.id=#{id}
+       GROUP BY t_employee.id
+    </select>
+
+
+
+            
+    <select id="findEmployeePage" resultType="EmployeeRecord" parameterType="EmployeeRecord">
+            SELECT <include refid="Base_Column_List"/>
+
+        
+
+        FROM t_employee
+
+        
+        
+        WHERE 1=1
+        
+
+        
+                                                                            <if test="record.id != null and record.id>0 ">
+                                    AND t_employee.id LIKE CONCAT('%',#{record.id},'%')
+                            </if>
+                                                                    <if test="record.name != null and record.name!= ''">
+                                    AND t_employee.name LIKE CONCAT('%',#{record.name},'%')
+                            </if>
+                                                                    
+
+                                                                                        <if test="record.companyId != null and record.companyId>0 ">
+                                    AND t_employee.company_id LIKE CONCAT('%',#{record.companyId},'%')
+                            </if>
+        
+        <if test="startTime != null">
+            <![CDATA[AND t_employee.start_time >= DATE(#{startTime})]]>
+        </if>
+        <if test="endTime != null">
+            <![CDATA[AND t_employee.end_time <= DATE(#{endTime}]]>
+        </if>
+            <!--
+        <if test="search != null and search != ''">
+            OR t_employee.name LIKE CONCAT('%',#{search},'%')
+        </if>
+        -->
+                                    </select>
+</mapper>
